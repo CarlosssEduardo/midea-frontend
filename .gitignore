@@ -1,0 +1,32 @@
+# Logs de execução e erros de pacotes
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependências e Builds de Produção (pesados / gerados automaticamente)
+node_modules
+dist
+dist-ssr
+build
+
+# Variáveis de Ambiente e Segurança (NUNCA sobem pro GitHub)
+.env
+.env.*
+!.env.example
+*.local
+
+# Configurações de Editores e Sistema Operacional
+.vscode/*
+!.vscode/extensions.json
+.idea
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
