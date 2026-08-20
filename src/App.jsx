@@ -47,9 +47,9 @@ export default function App() {
       formData.append("file", arquivo);
       setEnviando(true);
       let endpoint = '';
-      if (tipo === 'diario') endpoint = '/api/logistica/ordens/upload-diario';
-      else if (tipo === 'midea') endpoint = '/api/logistica/ordens/upload-historico';
-      else if (tipo === 'separacao') endpoint = '/api/logistica/ordens/upload-historico-separacao';
+      if (tipo === 'diario') endpoint = '/upload-diario';
+      else if (tipo === 'midea') endpoint = '/upload-historico';
+      else if (tipo === 'separacao') endpoint = '/upload-historico-separacao';
 
       try {
           await api.post(endpoint, formData, { headers: { 'Content-Type': 'multipart/form-data' }});
@@ -63,7 +63,7 @@ export default function App() {
   const handleLimparBanco = async () => {
       if (window.confirm("🚨 MODO DESENVOLVEDOR: Apagar tudo?")) {
           try {
-              await api.delete('/api/logistica/ordens/limpar-banco'); alert("Banco zerado!"); window.location.reload(); 
+              await api.delete('/limpar-banco'); alert("Banco zerado!"); window.location.reload(); 
           } catch (error) { console.error(error); }
       }
   };
