@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-    // Lê a URL da nuvem. Se não achar, usa o localhost de fallback.
-    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080'
+    // Já adicionamos o prefixo global do Java aqui no final da URL base
+    baseURL: (import.meta.env.VITE_API_URL || 'http://localhost:8080') + '/api/logistica/ordens'
 });
 
 export default api;
